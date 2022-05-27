@@ -1,0 +1,5 @@
+server:
+  port: 13001
+
+ideaonly:
+  websocket-url: ws://8.140.141.78:13001/websocket/

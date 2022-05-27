@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>梦幻炸金花测试版</title>
+    <link rel="stylesheet" href="/css/websocket.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script type="text/javascript" src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/poker/poker.min.js"></script>
+    <script type="text/javascript" src="/js/websocket/stomp.min.js"></script>
+    <script type="text/javascript" src="/js/websocket/sockjs.min.js"></script>
+</head>
+
+<body>
+<div class="gradient">
+    <div class="game-page">
+        <div style="height: 300px">
+            <div class="title-box" style="height: 30%;text-align: center;">
+                <a href="/" class="title-left"><img class="logo" src="../images/login.png"/></a>
+                <span class="title-center" id="room1"></span>
+                <i class="title-right"><img class="logo" src="../images/message.png"/></i>
+            </div>
+            <div style="height: 70%;margin: auto;text-align: center;">
+                <div>
+                    <canvas id="myowncanvas1" width="110"></canvas>
+                    <canvas id="myowncanvas2" width="110"></canvas>
+                    <canvas id="myowncanvas3" width="110"></canvas>
+                </div>
+
+                <div id="div_5" class="parentWrap" style="display: none">
+                    <div class="parent">
+                        <span class="child" id="card">公共牌</span>
+                        <span class="child" id="card2">手牌</span>
+                        <span class="child" id="card3">梦幻牌</span>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <!--<div style="height: 20%;margin:5px auto;text-align: center">
+                <select id="onLineUser" style="width:20%;height:100%;">
+                    <option>&#45;&#45;所有&#45;&#45;</option>
+                </select>
+                <input id="text" type="text" class="form-control" style="width:50%;height:100%;"/>
+                <button type="submit" class="primary" style="width:25%;height:100%;" onclick="send()">发送消息
+                </button>
+            </div>-->
+            <!--        <div style="height: 20%;margin:5px auto;text-align: center">-->
+            <!--            <select id="onLineUser" style="width:20%;height:100%;">-->
+            <!--                <option>&#45;&#45;所有&#45;&#45;</option>-->
+            <!--            </select>-->
+            <!--            <input id="text" type="text" class="form-control" style="width:50%;height:100%;"/>-->
+            <!--            <button type="submit" class="primary" style="width:25%;height:100%;" onclick="send()">发送消息-->
+            <!--            </button>-->
+            <!--        </div>-->
+            <!--        <div style="height: 10%;"></div>-->
+        </div>
+        <div style="height: 50px;width: 100%;">
+            <div style="width:20%;height:100%;float: left;margin-left:10px;">
+                <button id="div_1" type="submit" class="primary"
+                        style="width:100%;height:100%;;display: none"
+                        onclick="send(5)">发牌
+                </button>
+            </div>
+            <div style="width:20%;height:100%;float: left;margin-left:10px;">
+                <button id="div_2" type="submit" class="primary" onclick="send(7)"
+                        style="width:100%;height:100%;;display: none">换手牌
+                </button>
+            </div>
+            <div style="width:20%;height:100%;float: left;margin-left:10px;">
+                <button id="div_3" type="submit" class="primary"
+                        style="width:100%;height:100%;;display: none"
+                        onclick="send(6)">换公共牌
+                </button>
+            </div>
+            <div style="width:20%;height:100%;float: left;margin-left:10px">
+                <button id="div_4" type="submit" class="primary"
+                        style="width:100%;height:100%;;display: none"
+                        onclick="flip()">
+                </button>
+            </div>
+        </div>
+        <br/>
+        <!--<div style="margin-right: 10px;text-align: right;">-->
+        <!--    <button onclick="closeWebSocket()">关闭连接</button>-->
+        <!--</div>-->
+    </div>
+    <div id="message"
+         style="max-height:400px;max-width:100%;border:1px solid red;overflow:auto;text-align: center;;"></div>
+    <input type="text" th:value="${username}" id="username" style="display: none"/>
+    <input type="text" th:value="${room}" id="room" style="display: none"/>
+</div>
+<!--<div class='placeholder-view'></div>-->
+</body>
+
+<script type="text/javascript" src="/js/websocket/websocket.js"></script>
+
+</html>
